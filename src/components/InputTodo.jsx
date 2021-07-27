@@ -1,16 +1,19 @@
 import React from "react";
 
 export const InputTodo = (props) => {
-  const { todoText, onChange, onClick } = props;
+  const { todoText, onChange, onClick, disable } = props;
   return (
     <div className="input-area">
       <input
+        disabled={disable}
         type="text"
         placeholder="ToDoを入力"
         value={todoText}
         onChange={onChange}
       />
-      <button onClick={onClick}>追加</button>
+      <button disabled={disable} onClick={onClick}>
+        追加
+      </button>
     </div>
   );
 };
